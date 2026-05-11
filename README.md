@@ -1,38 +1,40 @@
-# portofolio
+# Portofolio — Day One
 
-This template should help get you started developing with Vue 3 in Vite.
+## 1. Perkenalan
 
-## Recommended IDE Setup
+- **Vue**: library frontend untuk membuat antarmuka interaktif dengan komponen.
+- **Vite**: build tool dan dev server yang sangat cepat untuk proyek modern (termasuk Vue).
+- **Capacitor**: bridge yang mengubah aplikasi web menjadi aplikasi mobile (Android/iOS).
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 2. Progres Harian
 
-## Recommended Browser Setup
+Hari 1 — fokus: instalasi Vue + Vite, lalu praktek bongkar-pasang komponen di `src/components`.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+Perintah singkat untuk Day 1:
 
 ```sh
+npm create vue@latest
+cd <project-name>
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+Jalankan `npm run dev` lalu buka alamat dev server di browser untuk mencoba komponen.
+
+## 3. Catatan
+
+- Instalasi Capacitor (opsional untuk nanti):
 
 ```sh
-npm run build
+# install Capacitor CLI sekali saja di laptop
+npm i -g @capacitor/cli
+
+# di dalam project (jika mau pakai Capacitor)
+npm install @capacitor/core @capacitor/android
+npx cap init
+npx cap add android
+npx cap sync android
+npx cap run android
 ```
+
+- Selalu jalankan `npx cap sync android` setiap kali melakukan build web sebelum `npx cap run android`.
