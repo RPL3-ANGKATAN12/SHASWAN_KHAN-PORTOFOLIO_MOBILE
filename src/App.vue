@@ -4,7 +4,7 @@ import { RouterLink } from "vue-router";
 
 <template>
   <header>
-    <img src="" alt="" />
+    <img src="@/assets/logo.svg" height="40" />
     <div class="menu">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/project">Project</RouterLink>
@@ -12,6 +12,23 @@ import { RouterLink } from "vue-router";
     </div>
   </header>
 </template>
+
+<style scoped>
+header {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: gray;
+}
+
+.menu * {
+  text-decoration: none;
+  margin-right: 10px;
+  color: black;
+}
+</style>
 
 <!-- <script setup>
 import { RouterLink, RouterView } from 'vue-router'
