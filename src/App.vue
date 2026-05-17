@@ -1,118 +1,66 @@
-<script setup lang="ts">
+<template>
+  <Header judul="Portofolio">
+    <!-- button toggle sidebar -->
+      <button class="hover:bg-neutral-200 px-2 py-1" @click="toggleSideBar">
+        {{ openSideBar ? "Close" : "Menu" }}
+      </button>
+  </Header>
+
+  <SideBar v-model="openSideBar" :items="sideBarItems" />
+
+  <main class="pt-13 min-h-screen px-8 mx-auto">
+    <RouterView />
+  </main>
+
+  <Footer judul="Portofolio" :items="footerItems" />
+</template>
+
+<script setup>
+import { ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+import SideBar from "./components/SideBar.vue";
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+
+const openSideBar = ref(false);
+
+function toggleSideBar() {
+  openSideBar.value = !openSideBar.value;
+}
+
+const sideBarItems = [
+  {
+    id: 1,
+    nama: "Home",
+    to: "/"
+  },
+  {
+    id: 2,
+    nama: "Project",
+    to: "/project"
+  },
+  {
+    id: 3,
+    nama: "Contact",
+    to: "/contact"
+  },
+]
+
+const footerItems = [
+  {
+    id: 1,
+    nama: "Github",
+    url: "https://github.com/"
+  },
+  {
+    id: 2,
+    nama: "LinkedInd",
+    url: "https://linkedin.com/"
+  },
+  {
+    id: 3,
+    nama: "Instagram",
+    url: "https://instagram.com/"
+  },
+]
 </script>
-
-<template>
-  <header>
-    <img src="@/assets/logo.svg" height="40" />
-    <div class="menu">
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/project">Project</RouterLink>
-      <RouterLink to="/contact">Contact</RouterLink>
-    </div>
-  </header>
-  <RouterView />
-</template>
-
-<style scoped>
-header {
-  width: 100vw;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: gray;
-}
-
-.menu * {
-  text-decoration: none;
-  margin-right: 10px;
-  color: black;
-}
-</style>
-
-<!-- <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
-</template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style> -->

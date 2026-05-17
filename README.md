@@ -28,7 +28,7 @@
 3. Hari 3 — fokus
    - Menggunakan tailwind
    - Menggunakan komponen dengan memanfaatkan props dan slot
-   - Memanfaatkan asset di folder `/public`
+   - Memanfaatkan asset di folder `/assets`
    - Melengkapi isi `src/views`
 
 4. Hari 4 — fokus
