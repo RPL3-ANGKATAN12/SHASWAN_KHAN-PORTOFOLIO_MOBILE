@@ -9,7 +9,7 @@
   <!-- Sidebar -->
   <aside
     :class="open ? 'translate-x-0' : '-translate-x-full'"
-    class="fixed top-0 left-0 w-64 h-screen flex flex-col gap-2 bg-neutral-50 px-3 py-2.5 z-40 transition-transform duration-300 pt-16"
+    class="fixed top-0 left-0 w-[70vw] h-screen flex flex-col gap-2 bg-neutral-50 px-3 py-2.5 z-40 transition-transform duration-300 pt-16"
   >
     <RouterLink
       v-for="item in items"
