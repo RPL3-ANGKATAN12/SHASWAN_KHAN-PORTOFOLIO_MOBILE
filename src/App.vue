@@ -1,9 +1,14 @@
 <template>
-  <Header judul="Portofolio">
+  <Header>
+    <template v-slot:kiri>
+      <RouterLink to="/" class="font-bold text-xl">Portofolio</RouterLink>
+    </template>
     <!-- button toggle sidebar -->
+     <template v-slot:kanan>
       <button class="hover:bg-neutral-200 px-2 py-1" @click="toggleSideBar">
         {{ openSideBar ? "Close" : "Menu" }}
       </button>
+    </template>
   </Header>
 
   <SideBar v-model="openSideBar" :items="sideBarItems" />
