@@ -11,8 +11,6 @@
     </template>
   </Header>
 
-  <p>fitur mode gelap</p>
-
   <SideBar v-model="openSideBar" :items="sideBarItems" />
 
   <main class="pt-13 min-h-screen px-8 mx-auto">
